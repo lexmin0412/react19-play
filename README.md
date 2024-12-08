@@ -21,7 +21,9 @@
 
 ## 升级 React19
 
-注意：Ant Design 暂不支持 React19，如果是存量项目，请暂时放弃升级，等待 Ant Design 官方给出解决方案。
+注意：由于 React19 发布不久且存在一些 Breaking Changes (如 ref 的使用方式)，很多开源库对其的支持都仍在规划/开发阶段，如 antd 暂不支持 React19，如果存量项目大量应用到了这两个库，请暂时放弃升级，等待官方给出支持。
+
+- [Ant Design V6 的官方讨论](https://github.com/ant-design/ant-design/discussions/51919)
 
 ### 升级依赖
 

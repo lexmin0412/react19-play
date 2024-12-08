@@ -16,7 +16,7 @@ function App() {
           },
         }}
       >
-        <BrowserRouter routes={routes} basename="/react-template">
+        <BrowserRouter routes={routes} basename="/react19-play">
           <Route />
         </BrowserRouter>
       </ConfigProvider>

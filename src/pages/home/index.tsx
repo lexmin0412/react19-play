@@ -1,41 +1,32 @@
-import { useRequest } from 'ahooks'
-import { Button, message } from 'antd'
-
 function Home() {
-	const {
-		loading: fetchLoading,
-		runAsync: handleFakeFetch
-	} = useRequest(
-    () => {
-      return fetch(window.location.href).then((res) => {
-        return res.text();
-      });
-    },
-    {
-			manual: true,
-      onSuccess: (res) => {
-        console.log("请求结果", res);
-				message.success('请求成功')
-      },
-    }
-  );
+
+	const handleFetch = () => {
+    fetch(window.location.href).then((res) => {
+      return res.text();
+    }).then((res) => {
+      console.log("请求结果", res);
+    })
+	}
+
+	const buttonCls =
+    "bg-white border border-solid border-[#d9d9d9] py-1 px-4 rounded-md text-sm hover:text-blue-500 cursor-pointer hover:border-blue-500 transition-all";
 
   return (
     <>
       <div className="m-3">
-        <Button loading={fetchLoading} onClick={handleFakeFetch}>
+        <button className={buttonCls} onClick={() => handleFetch()}>
           点击请求
-        </Button>
+        </button>
       </div>
       <div className="m-3">
-        <Button>
-          <a href="/react-template/about">路由切换</a>
-        </Button>
+        <button className={buttonCls}>
+          <a href="/react19-play/about">路由切换</a>
+        </button>
       </div>
       <div className="m-3">
-        <Button>
-          <a href="/react-template/antd-demo">AntD Demo</a>
-        </Button>
+        <button className={buttonCls}>
+          <a href="/react19-play/antd-demo">AntD Demo</a>
+        </button>
       </div>
     </>
   );
